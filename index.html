@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+
+        <style>
+
+            #container{
+                margin: auto;       
+                width: 90%;
+                background-color: rgb(202, 202, 202);
+            }
+            header{
+                width: 100%;
+                height: 125px;
+                background-color: rosybrown;
+                clear: both;
+            }
+            section{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 300px;
+                background-color: teal;
+            }
+            footer{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 175px;
+                background-color: yellowgreen;
+                clear: both;
+            }
+            .footerBox{
+                flex-grow: 1;
+                flex-shrink: 0;
+                margin: 1.5%;
+                background-color: rgb(62, 38, 151);
+            }
+            .middleBox{
+                flex-grow: 1;
+                flex-shrink: 0;
+                background-color: wheat;
+                margin: 1.5%;
+            }
+            
+
+        </style>
+    </head>
+    <body>  
+        <div id="container">
+
+            <header>
+                
+            </header>
+
+            <section>
+                <div class="middleBox"></div>
+                <div class="middleBox"></div>
+            </section>
+
+            <footer>
+                <div class="footerBox"></div>
+                <div class="footerBox"></div>
+                <div class="footerBox"></div>
+            </footer>
+        </div>
+
+    </body>
+
+</html>
