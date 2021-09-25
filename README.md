@@ -19,10 +19,10 @@ Instead of being committed directly on the master branch, changes to the code ba
 Once the software in the development branch is ready to be deployed, development branch will be merged with the master one.<br>
 A **bug fix** branch could be created when needed in order to fix bugs that have been found in the production software.
 
-A graphic view of the workflow strategy can be observed in the image below:
+A graphic view of the workflow strategy can be observed in the image below:<br><br>
 
-![](https://github.com/UIC-CS484/assignment-1---team-project-proposal-team-28/blob/master/branching_workflow?raw=true)
 
+<img src="https://github.com/UIC-CS484/assignment-1---team-project-proposal-team-28/blob/master/branching_workflow.png?raw=true" width="800">
 
 
 ## Development tools
