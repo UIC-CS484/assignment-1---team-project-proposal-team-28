@@ -3,133 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>CS484 Assignment 1</title>
+        <link rel="stylesheet" href="style/mystyle.css">
+        
 
-        <style>
-            #container{
-                margin: auto;       
-                width: 80%;
-            }
-            header{
-                display: table;
-                width: 100%;
-                height: 125px;
-                text-align: center;
-                background-color: rgb(219, 219, 219);
-            }
-            .section{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                width: 100%;
-                height: 450px;
-            }
-            footer{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                width: 100%;
-                height: 250px;
-                clear: both;
-                background-color: rgb(219, 219, 219);
-            }
-            .footerBox{
-                flex-grow: 1;
-                flex-shrink: 0;
-                flex-basis: 100px;
-                margin: 1.3%;
-                background-color: rgb(170, 170, 170);
-                padding: 1.1%;
-                padding-top: 1.2%;
-                overflow-y:hidden;
-            }
-            .middleBox{
-                flex-grow: 1;
-                flex-shrink: 0;
-                flex-basis: 200px;
-                background-color: rgb(219, 219, 219);
-                margin: 1.5% 1% 1.5% 1%;
-                padding: 1.5%;
-                overflow-y:hidden;
-            }
-            .middleBox:first-of-type{
-                margin-left: 0;
-            }
-            .middleBox:last-of-type{
-                margin-right: 0;
-            }
-            #title{
-                display: table-cell;
-                vertical-align: middle;
-                font-size: 32px;
-                font-weight: 150;
-                font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
-            .text{
-                font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
-            .special{
-                font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-                font-weight: 340;
-            }
-            .code{
-                font-family: 'Lucida Console', 'Courier New', 'Helvetica Neue', sans-serif;
-                font-weight: 300;
-            }
-            .entity{
-                font-weight: 600;
-            }
-            ul{
-                margin:0;
-            }
-            @media screen and (max-width: 1080px) {
-                .section{
-                flex-direction: column;
-                height:auto;
-            }
-            .middleBox{
-                flex-basis: auto;
-                margin: 1.5% 0% 1.5% 0%;
-            }
-            .middleBox:last-of-type{
-                margin-top: 0;
-            }
-            }
 
-            @media screen and (max-width: 900px) {
-                footer{
-                flex-direction: column;
-                height: auto;
-            }
-            .footerBox{
-                flex-basis: auto;
-            }
-            }
-
-        </style>
     </head>
     <body>  
         <div id="container">
 
-            <header>
+            <header class="backbone">
                 <span id="title">Filmie</span>
             </header>
 
             <div class="section">
-                <div class="middleBox">
+                <div class="middleBox backbone">
                    <span class="text">
                       The project will be based on the
                       <a href="https://developers.themoviedb.org/3/" target="_blank">TMDB API</a>.<br>
-                      The site will allow users to search <span class="special">movies</span> and <span class="special">TV shows</span>, find details about them such 
+                      The site will allow users to search for <span class="special">movies</span> and <span class="special">TV shows</span>, find details about them such 
                       as a brief description of the plot, cast, trailer and so on. <br><br><br>
                       Users will be able to maintain a list of their <span class="special">favorite shows</span> as well as a <span class="special">watchlist</span>. <br>
-                      The site will require users to provide an email, name, surname and password in order to register. <br><br><br>
+                      Users will be able to review movies as well as leave a comment. <br><br><br>
                       The entities that will model my database schema will be:<br>
                       <span class="code"><span class="entity">USER</span> &rarr; id, name, surname, email, password<br>
                       <span class="entity">FAVORITE</span> &rarr; userid, movieid<br>
-                      <span class="entity">WATCHLIST</span> &rarr; userid, movieid</span>
+                      <span class="entity">WATCHLIST</span> &rarr; userid, movieid<br>
+                      <span class="entity">MOVIE</span> &rarr; movieid, rating, comments</span>
                  </span>
                 </div>
-                <div class="middleBox">
+                <div class="middleBox backbone">
                     <span class="text">
                         Anyone interested in movies or TV shows is a potential user of <span class="special">Filmie</span>.<br>
                         With the growth of streaming services more an more people are becoming passionate about cinema, 
@@ -142,8 +44,8 @@
                 </div>
             </div>
 
-            <footer>
-                <div class="footerBox">
+            <footer class="backbone">
+                <div class="footerBox footerBoxColor">
                     <ul class="text">
                         <li><a href="https://developers.themoviedb.org/3/" target="_blank">TMDB API</a></li>
                         <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a> useful resource for HTML & CSS</li>
@@ -152,16 +54,26 @@
                              (<a href="https://www.polireplay.it/lesson.php?id=3652" target="_blank">example</a>)</li>
                       </ul> 
                 </div>
-                <div class="footerBox">
+                <div class="footerBox footerBoxColor">
                     <span class="text">Requirement 5 of the final project says "Implement a charting library that provides visualization of data [...]".<br><br>
                         I don't think that my topic fits well with charts and plots so I was wondering what other things 
                         I could implement in order to satisfy requirement 5.
                     </span>
                 </div>
-                <div class="footerBox"></div>
+                <div class="footerBox footerBoxColor footerBoxWrapper" id="inputBox">
+                    
+                    <dl class="list">
+                        <dd><span class="text">Adjust the font size</span>
+                            <input type="range" min="28" max="56" value="18" class="slider" id="sliderId"><br><br></dd>
+                        <dd><button class="button" id="buttonId">Dark mode</button></dd>
+                      </dl> 
+                </div>
             </footer>
         </div>
 
     </body>
+
+    <script src="scripts/functionalities.js"></script> 
+
 
 </html>
